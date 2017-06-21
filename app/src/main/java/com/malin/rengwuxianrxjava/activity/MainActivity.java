@@ -70,9 +70,9 @@ public class MainActivity extends Activity{
         setContentViewLayout(true);
         initializeLogAndDeviceInfo();
         initView();
-//        miZhiSuoJinAndNestedLoopAndCallbackHell();//演示谜之缩进--嵌套循环--回调地狱
-        rxJavaSolveMiZhiSuoJinAndNestedLoopAndCallbackHell();//使用RxJava解决问题
-//        testFuncation(16);//RxJava基础概念的练习
+        miZhiSuoJinAndNestedLoopAndCallbackHell();//演示谜之缩进--嵌套循环--回调地狱
+//        rxJavaSolveMiZhiSuoJinAndNestedLoopAndCallbackHell();//使用RxJava解决问题
+        testFuncation(6);//RxJava基础概念的练习
     }
 
     /**
@@ -336,8 +336,8 @@ public class MainActivity extends Activity{
                 subscriber.onNext("Hello");
                 subscriber.onNext("World");
                 subscriber.onNext("!");
-                subscriber.onCompleted();
                 subscriber.onError(new Throwable());
+                subscriber.onCompleted();
                 Logger.d("被观察者-observable->call()->onCompleted()之后是否还有输出");
             }
         });
@@ -1070,9 +1070,9 @@ public class MainActivity extends Activity{
         if (mGoToRecycleImageView) {
             Logger.d("onDestroy()> RecycleBitmap.recycleImageView(mImageView)");
             RecycleBitmap.recycleImageView(mImageView);
+
             mImageView.setImageBitmap(null);
         }
-
         if (mManyBitmapSuperposition != null && !mManyBitmapSuperposition.isRecycled()) {
             mManyBitmapSuperposition.recycle();
             mManyBitmapSuperposition = null;
