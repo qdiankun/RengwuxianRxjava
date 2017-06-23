@@ -223,7 +223,7 @@ public class MainActivity extends Activity{
             if (mCounter >= (mCounter / number) * number && mCounter < (((mCounter / number) + 1) * number)) {//[0,number)
                 left = (mCounter / number) * imageWidth;
                 top = (mCounter % number) * imageHeight;
-                // Log.d(TAG,""+mCounter+" left="+left+" top="+top);
+                 Log.d(TAG,""+mCounter+" left="+left+" top="+top);
 
                 //5:将Bitmap画到指定坐标
                 mCanvas.drawBitmap(bitmap, left, top, null);
@@ -644,7 +644,7 @@ public class MainActivity extends Activity{
                 .doOnSubscribe(new Action0() {
                     @Override
                     public void call() {
-                        mProgressBar.setVisibility(View.VISIBLE);
+                           mProgressBar.setVisibility(View.VISIBLE);
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())//指定 Subscriber 所运行在的线程。或者叫做事件消费的线程
