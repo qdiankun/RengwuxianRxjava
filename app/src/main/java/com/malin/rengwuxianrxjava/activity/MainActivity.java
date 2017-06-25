@@ -70,8 +70,8 @@ public class MainActivity extends Activity{
         setContentViewLayout(true);
         initializeLogAndDeviceInfo();
         initView();
-        miZhiSuoJinAndNestedLoopAndCallbackHell();//演示谜之缩进--嵌套循环--回调地狱
-//        rxJavaSolveMiZhiSuoJinAndNestedLoopAndCallbackHell();//使用RxJava解决问题
+//        miZhiSuoJinAndNestedLoopAndCallbackHell();//演示谜之缩进--嵌套循环--回调地狱
+        rxJavaSolveMiZhiSuoJinAndNestedLoopAndCallbackHell();//使用RxJava解决问题
         testFuncation(6);//RxJava基础概念的练习
     }
 
@@ -297,6 +297,7 @@ public class MainActivity extends Activity{
                 .doOnSubscribe(new Action0() {
                     @Override
                     public void call() {
+                        Logger.d("doOnSubscribe call");
                         mProgressBar.setVisibility(View.VISIBLE);
                     }
                 })
